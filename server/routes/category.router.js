@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
+require('dotenv').config(); // needed when hiding keys to apis.
 
 const router = express.Router();
 
