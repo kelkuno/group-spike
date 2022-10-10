@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
 
@@ -24,6 +25,16 @@ const handleEmail = (event) => {
   event.preventDefault();
   console.log('clicked submit');
   console.log(email);
+
+  axios({
+    method: 'POST',
+    url: '/api/category/',
+    data: email
+}).then((response) =>{
+    console.log('response:', response);
+}).catch (function (error){
+    console.log('error on add:', error);
+})
 }
 
   return (
